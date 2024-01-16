@@ -18,7 +18,7 @@ export async function run(): Promise<void> {
   // Parse the body
   const parsedBody = await parse(body, csvToList)
   core.debug(`Parsed body: ${JSON.stringify(parsedBody, null, 2)}`)
-  core.setOutput('json', JSON.stringify(parsedBody))
+  core.exportVariable('json', JSON.stringify(parsedBody))
 }
 
 run()
